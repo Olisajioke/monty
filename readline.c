@@ -9,7 +9,7 @@
 void get_opcode_arg(stack_t **stack,
 char *current_line, unsigned int line_number)
 {
-	char *opcode = strtok(current_line, " \t\n");
+	char *opcode = strtok(current_line, " \t$\n");
 
 	if (opcode != NULL)
 	{
@@ -27,7 +27,7 @@ char *current_line, unsigned int line_number)
  */
 void get_arguments(stack_t **stack, char *opcode, unsigned int line_number)
 {
-	char *argument = strtok(NULL, " \t\n");
+	char *argument = strtok(NULL, " \t$\n");
 
 	if (argument != NULL)
 	{
