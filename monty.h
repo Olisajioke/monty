@@ -48,5 +48,8 @@ void process_opcode(stack_t **stack, char *argument,
 char *opcode, unsigned int line_number);
 void push_operation(stack_t **stack, unsigned int line_number);
 void pall_operation(stack_t **stack, unsigned int line_number);
+void pint_operation(stack_t **stack, unsigned int line_number);
+void pop_operation(stack_t **stack, unsigned int line_number);
+void swap_operation(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H */

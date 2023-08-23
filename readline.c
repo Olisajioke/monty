@@ -67,7 +67,10 @@ char *opcode, char *argument, unsigned int line_number)
 {
 	instruction_t operations[] = {
 		{"push", push_operation},
-		{"pall", pall_operation}
+		{"pall", pall_operation},
+		{"pint", pint_operation},
+		{"pop", pop_operation},
+		{"swap", swap_operation},
 	};
 	size_t i = 0;
 	int found_opcode = 0;
