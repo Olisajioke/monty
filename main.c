@@ -31,7 +31,14 @@ int main(int argc, char *argv[])
 		get_opcode_arg(&stack, current_line, line_number);
 		line_number++;
 	}
-	free(stack);
+
+	while (stack != NULL)
+	{
+		stack_t *temp = stack;
+
+		stack = stack->next;
+		free(temp);
+	}
 	fclose(file);
 	return (0);
 }

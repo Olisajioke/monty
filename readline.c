@@ -10,10 +10,15 @@ void get_opcode_arg(stack_t **stack,
 char *current_line, unsigned int line_number)
 {
 	char *opcode = strtok(current_line, " \t$\n");
+	char *line = current_line;
 
+	while (*line == ' ' || *line == '\t' || *line == '$')
+		line++;
+	if (*line == '#')
+		return;
 	if (opcode != NULL)
 	{
-		while (*opcode == ' ' || *opcode == '\t')
+		while (*opcode == ' ' || *opcode == '\t' || *opcode == '$')
 			opcode++;
 		get_arguments(stack, opcode, line_number);
 	}
@@ -85,6 +90,14 @@ char *opcode,  __attribute((unused)) char *argument, unsigned int line_number)
 		{"pint", pint_operation},
 		{"pop", pop_operation},
 		{"swap", swap_operation},
+		{"add", add_operation},
+		{"nop", nop_operation},
+		{"sub", sub_operation},
+		{"div", div_operation},
+		{"mul", mul_operation},
+		{"mod", mod_operation},
+		{"pchar", pchar_operation},
+		{"pstr", pstr_operation}
 	};
 	size_t i = 0;
 	int found_opcode = 0;

@@ -9,6 +9,7 @@
 #include <ctype.h>
 
 #define BUFFER_SIZE 1024
+#define CHAR_VALUE_LIMIT 127
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -51,5 +52,13 @@ void pall_operation(stack_t **stack, unsigned int line_number);
 void pint_operation(stack_t **stack, unsigned int line_number);
 void pop_operation(stack_t **stack, unsigned int line_number);
 void swap_operation(stack_t **stack, unsigned int line_number);
+void add_operation(stack_t **stack, unsigned int line_number);
+void nop_operation(stack_t **stack, unsigned int line_number);
+void sub_operation(stack_t **stack, unsigned int line_number);
+void div_operation(stack_t **stack, unsigned int line_number);
+void mul_operation(stack_t **stack, unsigned int line_number);
+void mod_operation(stack_t **stack, unsigned int line_number);
+void pchar_operation(stack_t **stack, unsigned int line_number);
+void pstr_operation(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H */

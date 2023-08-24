@@ -5,7 +5,8 @@
  * @stack: A pointer to the top of the stack.
  * @line_number: The current line number in the Monty file.
  */
-void push_operation(stack_t **stack, unsigned int line_number)
+void push_operation(stack_t **stack, __attribute((unused))
+		unsigned int line_number)
 {
 		stack_t *new_node = (stack_t *)malloc(sizeof(stack_t));
 
@@ -31,7 +32,8 @@ void push_operation(stack_t **stack, unsigned int line_number)
  * @stack: A pointer to the top of the stack.
  * @line_number: The current line number in the Monty file.
  */
-void pall_operation(stack_t **stack, unsigned int line_number)
+void pall_operation(stack_t **stack, __attribute((unused))
+		unsigned int line_number)
 {
 		stack_t *stack_val;
 
@@ -67,19 +69,18 @@ void pint_operation(stack_t **stack, unsigned int line_number)
  */
 void pop_operation(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp = *stack;
+
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
-		stack_t *temp = *stack;
-		*stack = (*stack)->next;
+	*stack = (*stack)->next;
 
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
-
-		free(temp);
+	free(temp);
 }
 
 /**
