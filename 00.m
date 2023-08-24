@@ -1,2 +1,4 @@
 push 1
-push a
+push       5
+      push    6$
+      pall

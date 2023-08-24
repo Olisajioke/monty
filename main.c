@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int arg;
+int arg = 0;
 
 /**
  * main - an Interpreter program
@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
 		get_opcode_arg(&stack, current_line, line_number);
 		line_number++;
 	}
+	free(stack);
 	fclose(file);
 	return (0);
 }
