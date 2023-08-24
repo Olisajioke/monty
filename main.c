@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int arg = 0;
+int arg;
 
 /**
  * main - an Interpreter program

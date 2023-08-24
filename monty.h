@@ -44,8 +44,8 @@ typedef struct instruction_s
 void get_opcode_arg(stack_t **stack,
 char *current_line, unsigned int line_number);
 void get_arguments(stack_t **stack, char *opcode, unsigned int line_number);
-void process_opcode(stack_t **stack, char *argument,
-char *opcode, unsigned int line_number);
+void process_opcode(stack_t **stack, char *opcode, char *argument,
+		unsigned int line_number);
 void push_operation(stack_t **stack, unsigned int line_number);
 void pall_operation(stack_t **stack, unsigned int line_number);
 void pint_operation(stack_t **stack, unsigned int line_number);

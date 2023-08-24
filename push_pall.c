@@ -35,10 +35,12 @@ unsigned int line_number)
 void pall_operation(stack_t **stack, __attribute((unused))
 unsigned int line_number)
 {
-	while (*stack)
+	stack_t *tmp = *stack;
+
+	while (tmp)
 	{
-		printf("%d\n", (*stack)->n);
-		*stack = (*stack)->next;
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
 	}
 }
 
